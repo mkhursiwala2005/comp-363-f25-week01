@@ -98,13 +98,5 @@ def min_span_tree(G: list[list[int]]) -> list[list[int]]:
                         cheapest[cu] = (u, v)
                     if cheapest[cv] is None or G[u][v] < G[cheapest[cv][0]][cheapest[cv][1]]:
                         cheapest[cv] = (u, v)
-                        
-        for edge in cheapest: 
-            if edge is not None: 
-                u, v = edge
-                T[u][v] = G[u][v]
-                T[v][u] = G[u][v]
-                
-        comp_count, compLabels = count_and_label(T)
         
     return T
