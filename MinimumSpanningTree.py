@@ -92,11 +92,6 @@ def min_span_tree(G: list[list[int]]) -> list[list[int]]:
         for u in range(n):
             for v in range(n):
                 if G[u][v] != no_edge and compLabels[u] != compLabels[v]:
-                    cu = compLabels[u]
-                    cv = compLabels[v]
-                    if cheapest[cu] is None or G[u][v] < G[cheapest[cu][0]][cheapest[cu][1]]:
-                        cheapest[cu] = (u, v)
-                    if cheapest[cv] is None or G[u][v] < G[cheapest[cv][0]][cheapest[cv][1]]:
-                        cheapest[cv] = (u, v)
+                    
         
     return T
